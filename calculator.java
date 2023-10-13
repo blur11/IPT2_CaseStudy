@@ -6,21 +6,28 @@ public class calculator {
     
     public static void main(String[] args) {
         
+                 
         Scanner sc = new Scanner(System.in);
-
+        
+        for (int i=0; ; i++){
         String num1 = "", num2= "";
 
         int number1 = 0, number2 = 0;
 
+        
+
         while (num1 == "") {
 
             System.out.print("Enter first number: ");
+  
 
             try {
                 num1 = sc.nextLine();
+                System.out.println("————————————————————");
                 number1 = Integer.parseInt(num1);
             } catch (Exception e) {
                 System.out.println("Invalid input, try again");
+                System.out.println("————————————————————");
                 num1 = "";
             }
 
@@ -32,9 +39,11 @@ public class calculator {
 
             try {
                 num2 = sc.nextLine();
+                System.out.println("————————————————————");
                 number2 = Integer.parseInt(num2);
             } catch (Exception e) {
                 System.out.println("Invalid input, try again");
+                System.out.println("————————————————————");
                 num2 = "";
             }
 
@@ -48,6 +57,7 @@ public class calculator {
             System.out.println("A. Addition\nB. Subtraction\nC. Multiplication\nD. Division");
             System.out.print("Choose Operation: ");
             opt = sc.nextLine().charAt(0);
+            System.out.println("————————————————————");
 
     
             if (opt != 'A' && opt != 'a' &&
@@ -68,26 +78,26 @@ public class calculator {
             case 'A':
             case 'a':
                 // Addition
-                result = add(number1, number2);
+                result = number1 + number2;
                 break;
                 
             case 'B':
             case 'b':
                 // Subtraction
-                result = sub(number1, number2);
+                result = number1 - number2;
                 break;
                 
             case 'C':
             case 'c':
                 // Multiplication
-                result = mult(number1, number2);
+                result = number1 * number2;
                 break;
                 
             case 'D':
             case 'd':
                 // Division
                 if (number2 != 0) {
-                    result = div(number1, number2);
+                    result = (double) number1 / number2;
                 } else {
                     System.out.println("Division by zero is not allowed.");
                 }
@@ -95,29 +105,24 @@ public class calculator {
         }
 
         System.out.println("Result: " + result);
+        System.out.println("————————————————————");
+        System.out.println("Do you still want to continue? YES/NO");
+        String continueCalc = sc.nextLine();
+        System.out.println("————————————————————");
+        if("NO".equalsIgnoreCase(continueCalc)){
+            System.out.println("Thanks for using our Calculator!!");
+            System.exit(0);
+        }
+        else if(!"YES".equalsIgnoreCase(continueCalc)){
+            System.out.println("Thanks for using our Calculator!!");
+            System.exit(0);
+        }
+        else if ("YES".equalsIgnoreCase(continueCalc)){
+            
+        }
 
-        sc.close();
-
+     
     }
-
-    public static double add(int number1, int number2){
-        double result = number1 + number2;
-        return result;
-    }
-
-    public static double sub(int number1, int number2){
-        double result = number1 - number2;
-        return result;
-    }
-
-    public static double mult(int number1, int number2){
-        double result = number1 * number2;
-        return result;
-    }
-
-    public static double div(int number1, int number2){
-        double result = (double) number1 / number2;
-        return result;
     }
 
 }
