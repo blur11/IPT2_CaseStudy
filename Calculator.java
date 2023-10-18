@@ -5,6 +5,7 @@ public class Calculator {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
+            //Instruction
             System.out.println("Option:");
             System.out.println("Enter 'add' for addition");
             System.out.println("Enter 'subtract' for subtraction");
