@@ -8,7 +8,7 @@ public class calculator {
 
         Scanner sc = new Scanner(System.in);
 
-        String num1 = "", num2= "";
+        String num1 = "", num2= "";//initialize variable
 
         int number1 = 0, number2 = 0;
 
